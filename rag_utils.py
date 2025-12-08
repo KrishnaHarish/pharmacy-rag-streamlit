@@ -31,8 +31,8 @@ class PharmacyRAG:
         self.vectorstore = None
         self.qa_chain = None
         
-        # Set the API key in environment
-        os.environ["OPENAI_API_KEY"] = openai_api_key
+        # Note: API key is stored in instance variable and passed directly to components
+        # rather than setting as environment variable to avoid exposure in logs
         
     def load_and_process_documents(self) -> List[Any]:
         """

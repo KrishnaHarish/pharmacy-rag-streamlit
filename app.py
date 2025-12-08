@@ -131,10 +131,11 @@ with st.sidebar:
     - Drug interactions with warfarin?
     """)
     
-    # Clear history button
-    if st.button("🗑️ Clear History"):
-        st.session_state.chat_history = []
-        st.rerun()
+    # Clear history button (only show if there's history)
+    if st.session_state.chat_history:
+        if st.button("🗑️ Clear History"):
+            st.session_state.chat_history = []
+            st.rerun()
 
 # Main content area
 if st.session_state.initialized:
