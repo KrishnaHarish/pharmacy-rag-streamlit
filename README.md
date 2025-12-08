@@ -8,7 +8,7 @@ A Retrieval-Augmented Generation (RAG) application for pharmacy-related queries 
 - **Source Citations**: View the source documents used to generate answers
 - **Interactive UI**: User-friendly Streamlit interface
 - **Vector Search**: Efficient document retrieval using ChromaDB
-- **LLM Integration**: Powered by OpenAI's language models
+- **LLM Integration**: Powered by GitHub-hosted language models (gpt-4o)
 
 ## Setup
 
@@ -23,14 +23,13 @@ A Retrieval-Augmented Generation (RAG) application for pharmacy-related queries 
    pip install -r requirements.txt
    ```
 
-3. **Configure API Keys**
+3. **Configure the Application**
    
-   Create a `.env` file in the project root:
-   ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-
-   Or configure through the Streamlit sidebar when running the app.
+   The application uses GitHub-hosted models and does not require OpenAI API keys.
+   
+   If running in GitHub Codespaces or a GitHub-authenticated environment, the models will be automatically available.
+   
+   For local development, you may need to configure alternative model providers in the code.
 
 4. **Run the application**
    ```bash
@@ -40,7 +39,7 @@ A Retrieval-Augmented Generation (RAG) application for pharmacy-related queries 
 ## Usage
 
 1. Launch the application using the command above
-2. Enter your OpenAI API key in the sidebar (if not set in .env)
+2. The app will automatically use GitHub-hosted models (no API key needed in GitHub Codespaces)
 3. The app will automatically load sample pharmacy documents
 4. Type your pharmacy-related question in the text area
 5. Click "Get Answer" to receive a response with source citations
@@ -69,9 +68,16 @@ pharmacy-rag-streamlit/
 
 - **Streamlit**: Web interface
 - **LangChain**: RAG pipeline orchestration
-- **OpenAI**: Language model for generation
+- **GitHub Models**: AI models hosted by GitHub (gpt-4o)
 - **ChromaDB**: Vector database for document storage
 - **Python-dotenv**: Environment variable management
+
+## Configuration
+
+This application is configured to use GitHub-hosted models through the Copilot infrastructure:
+- **Model**: gpt-4o (GitHub-hosted)
+- **No API keys required** when running in GitHub Codespaces or authenticated GitHub environments
+- Configuration file: `.github/copilot/coding_agents.yml`
 
 ## License
 

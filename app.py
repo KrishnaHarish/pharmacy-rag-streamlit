@@ -2,7 +2,7 @@
 Pharmacy RAG Streamlit Application
 
 A Retrieval-Augmented Generation application for answering pharmacy-related questions.
-Uses LangChain, OpenAI, and ChromaDB to provide accurate answers with source citations.
+Uses LangChain, GitHub-hosted models, and ChromaDB to provide accurate answers with source citations.
 """
 
 import streamlit as st
@@ -69,40 +69,30 @@ st.markdown('<p class="sub-header">Ask questions about medications, dosages, sid
 with st.sidebar:
     st.header("⚙️ Configuration")
     
-    # API Key input
-    api_key = st.text_input(
-        "OpenAI API Key",
-        type="password",
-        value=os.getenv("OPENAI_API_KEY", ""),
-        help="Enter your OpenAI API key. You can get one from https://platform.openai.com/api-keys"
-    )
-    
-    # Model selection
+    # Model selection - using GitHub-hosted models
     model_choice = st.selectbox(
         "Select Model",
-        ["gpt-5.1", "gpt-3.5-turbo", "gpt-4", "gpt-4-turbo-preview"],
+        ["gpt-4o", "gpt-4", "gpt-4-turbo", "gpt-3.5-turbo"],
         index=0,
-        help="Choose the OpenAI model for generating responses"
+        help="Choose the GitHub-hosted model for generating responses"
     )
     
     # Initialize button
     if st.button("🚀 Initialize System", type="primary"):
-        if not api_key:
-            st.error("⚠️ Please enter your OpenAI API key")
-        else:
-            with st.spinner("Loading pharmacy knowledge base... This may take a moment."):
-                try:
-                    # Create and initialize the RAG system
-                    st.session_state.rag_system = create_rag_system(
-                        openai_api_key=api_key,
-                        data_path="data/pharmacy_info.txt",
-                        model_name=model_choice
-                    )
-                    st.session_state.initialized = True
-                    st.success("✅ System initialized successfully!")
-                except Exception as e:
-                    st.error(f"❌ Error initializing system: {str(e)}")
-                    st.session_state.initialized = False
+        with st.spinner("Loading pharmacy knowledge base... This may take a moment."):
+            try:
+                # Create and initialize the RAG system
+                # Uses GitHub-hosted models - credentials provided by environment
+                st.session_state.rag_system = create_rag_system(
+                    data_path="data/pharmacy_info.txt",
+                    model_name=model_choice
+                )
+                st.session_state.initialized = True
+                st.success("✅ System initialized successfully!")
+            except Exception as e:
+                st.error(f"❌ Error initializing system: {str(e)}")
+                st.info("💡 Note: This app uses GitHub-hosted models. Ensure you're running in a GitHub-authenticated environment (e.g., GitHub Codespaces).")
+                st.session_state.initialized = False
     
     # System status
     st.divider()
@@ -208,7 +198,7 @@ if st.session_state.initialized:
 
 else:
     # Display instructions when not initialized
-    st.info("👈 Please configure your OpenAI API key in the sidebar and click 'Initialize System' to get started.")
+    st.info("👈 Please click 'Initialize System' in the sidebar to get started.")
     
     st.markdown("### 🎯 What This App Does")
     st.markdown("""
@@ -221,10 +211,14 @@ else:
     
     ### 🚀 Getting Started
     
-    1. Enter your OpenAI API key in the sidebar (required)
-    2. Click "Initialize System" to load the knowledge base
-    3. Type your question and click "Get Answer"
-    4. Review the answer and check the sources used
+    1. Click "Initialize System" in the sidebar to load the knowledge base
+    2. Type your question and click "Get Answer"
+    3. Review the answer and check the sources used
+    
+    ### 🌐 GitHub-Hosted Models
+    
+    This application uses GitHub-hosted AI models (gpt-4o) and does not require manual API key configuration.
+    When running in GitHub Codespaces or other GitHub-authenticated environments, model access is automatic.
     
     ### ⚠️ Important Disclaimer
     
@@ -251,4 +245,4 @@ else:
 
 # Footer
 st.divider()
-st.caption("💊 Pharmacy RAG Assistant | Built with Streamlit, LangChain, and OpenAI | ⚠️ For informational purposes only")
+st.caption("💊 Pharmacy RAG Assistant | Built with Streamlit, LangChain, and GitHub Models | ⚠️ For informational purposes only")

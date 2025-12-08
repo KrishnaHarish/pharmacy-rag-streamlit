@@ -1,6 +1,7 @@
 """
 RAG (Retrieval-Augmented Generation) utilities for the Pharmacy application.
 Handles document loading, embedding, vector store creation, and query processing.
+Uses GitHub-hosted models for AI capabilities.
 """
 
 import os
@@ -16,23 +17,19 @@ from langchain.prompts import PromptTemplate
 class PharmacyRAG:
     """
     A RAG system for pharmacy-related question answering.
+    Uses GitHub-hosted models for embeddings and generation.
     """
     
-    def __init__(self, openai_api_key: str, data_path: str = "data/pharmacy_info.txt"):
+    def __init__(self, data_path: str = "data/pharmacy_info.txt"):
         """
         Initialize the Pharmacy RAG system.
         
         Args:
-            openai_api_key: OpenAI API key for embeddings and LLM
             data_path: Path to the pharmacy information text file
         """
-        self.openai_api_key = openai_api_key
         self.data_path = data_path
         self.vectorstore = None
         self.qa_chain = None
-        
-        # Note: API key is stored in instance variable and passed directly to components
-        # rather than setting as environment variable to avoid exposure in logs
         
     def load_and_process_documents(self) -> List[Any]:
         """
@@ -59,12 +56,14 @@ class PharmacyRAG:
     def create_vectorstore(self, documents: List[Any]) -> None:
         """
         Create a vector store from document chunks.
+        Uses GitHub-hosted embeddings model.
         
         Args:
             documents: List of document chunks to embed
         """
-        # Create embeddings
-        embeddings = OpenAIEmbeddings(openai_api_key=self.openai_api_key)
+        # Create embeddings using GitHub-hosted models
+        # Credentials are provided by the environment (GitHub Codespaces, etc.)
+        embeddings = OpenAIEmbeddings()
         
         # Create vector store
         self.vectorstore = Chroma.from_documents(
@@ -73,22 +72,23 @@ class PharmacyRAG:
             collection_name="pharmacy_knowledge"
         )
     
-    def setup_qa_chain(self, model_name: str = "gpt-5.1", temperature: float = 0) -> None:
+    def setup_qa_chain(self, model_name: str = "gpt-4o", temperature: float = 0) -> None:
         """
         Set up the QA chain for question answering.
+        Uses GitHub-hosted models.
         
         Args:
-            model_name: OpenAI model to use
+            model_name: Model to use (default: gpt-4o, GitHub-hosted)
             temperature: Temperature for response generation (0 = deterministic)
         """
         if self.vectorstore is None:
             raise ValueError("Vector store not initialized. Call create_vectorstore first.")
         
-        # Create LLM
+        # Create LLM using GitHub-hosted models
+        # Credentials are provided by the environment
         llm = ChatOpenAI(
             model_name=model_name,
-            temperature=temperature,
-            openai_api_key=self.openai_api_key
+            temperature=temperature
         )
         
         # Create custom prompt template
@@ -141,12 +141,12 @@ Helpful Answer:"""
             "source_documents": result["source_documents"]
         }
     
-    def initialize(self, model_name: str = "gpt-5.1") -> None:
+    def initialize(self, model_name: str = "gpt-4o") -> None:
         """
         Complete initialization of the RAG system.
         
         Args:
-            model_name: OpenAI model to use for generation
+            model_name: Model to use for generation (default: gpt-4o, GitHub-hosted)
         """
         # Load and process documents
         documents = self.load_and_process_documents()
@@ -158,19 +158,19 @@ Helpful Answer:"""
         self.setup_qa_chain(model_name=model_name)
 
 
-def create_rag_system(openai_api_key: str, data_path: str = "data/pharmacy_info.txt", 
-                      model_name: str = "gpt-5.1") -> PharmacyRAG:
+def create_rag_system(data_path: str = "data/pharmacy_info.txt", 
+                      model_name: str = "gpt-4o") -> PharmacyRAG:
     """
     Convenience function to create and initialize a Pharmacy RAG system.
+    Uses GitHub-hosted models - no API key required.
     
     Args:
-        openai_api_key: OpenAI API key
         data_path: Path to pharmacy data file
-        model_name: OpenAI model to use
+        model_name: Model to use (default: gpt-4o, GitHub-hosted)
         
     Returns:
         Initialized PharmacyRAG instance
     """
-    rag = PharmacyRAG(openai_api_key=openai_api_key, data_path=data_path)
+    rag = PharmacyRAG(data_path=data_path)
     rag.initialize(model_name=model_name)
     return rag
