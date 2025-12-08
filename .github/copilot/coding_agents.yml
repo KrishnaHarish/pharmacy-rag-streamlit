@@ -1,0 +1,29 @@
+# GitHub Copilot Coding Agent Configuration
+# This configuration uses GitHub-hosted models instead of OpenAI API keys
+
+version: 1
+
+agents:
+  pharmacy-rag-agent:
+    description: "Coding agent for pharmacy RAG application development"
+    # Use GitHub-hosted GPT-4o model (no OpenAI API key required)
+    model: gpt-4o
+    # GitHub models are accessed through GitHub's infrastructure
+    # No API key configuration needed - uses GitHub authentication
+    skills:
+      - code_generation
+      - code_review
+      - bug_fixing
+      - refactoring
+    
+    context:
+      - "This is a Pharmacy RAG (Retrieval-Augmented Generation) application"
+      - "Built with Streamlit, LangChain, and vector databases"
+      - "Uses GitHub-hosted models for AI capabilities"
+      - "No external API keys required"
+    
+    guardrails:
+      - "Follow existing code patterns and style"
+      - "Maintain security best practices"
+      - "Ensure backward compatibility where possible"
+      - "Document all significant changes"

@@ -29,7 +29,7 @@ def test_document_loading():
     try:
         from rag_utils import PharmacyRAG
         
-        rag = PharmacyRAG(openai_api_key='test_key', data_path='data/pharmacy_info.txt')
+        rag = PharmacyRAG(data_path='data/pharmacy_info.txt')
         docs = rag.load_and_process_documents()
         
         if len(docs) > 0:
@@ -103,8 +103,9 @@ def main():
     if all(results):
         print("\n✓ All tests passed!")
         print("\nTo run the application:")
-        print("1. Set your OPENAI_API_KEY in .env file or Streamlit sidebar")
+        print("1. Ensure you're in a GitHub-authenticated environment (e.g., GitHub Codespaces)")
         print("2. Run: streamlit run app.py")
+        print("3. The app uses GitHub-hosted models - no API key configuration needed")
         return 0
     else:
         print("\n✗ Some tests failed")
