@@ -1,0 +1,357 @@
+# Pharmacy Information Database
+
+## ASPIRIN
+
+### General Information
+Aspirin (acetylsalicylic acid) is a nonsteroidal anti-inflammatory drug (NSAID) used to reduce pain, fever, and inflammation. It also has antiplatelet effects and is commonly used for cardiovascular protection.
+
+### Dosage
+- Pain/Fever: 325-650 mg every 4-6 hours as needed (maximum 4000 mg/day)
+- Cardiovascular protection: 81-325 mg once daily
+- Anti-inflammatory: 3-4 grams daily in divided doses
+
+### Side Effects
+Common side effects include:
+- Stomach upset or heartburn
+- Nausea
+- Increased bleeding risk
+- Bruising more easily
+
+Serious side effects:
+- Gastrointestinal bleeding
+- Allergic reactions (rash, difficulty breathing)
+- Reye's syndrome in children with viral infections
+- Tinnitus (ringing in ears) with high doses
+
+### Drug Interactions
+Aspirin interacts with:
+- Warfarin and other blood thinners (increased bleeding risk)
+- Other NSAIDs (increased side effects)
+- Methotrexate (increased toxicity)
+- ACE inhibitors (reduced effectiveness)
+- Alcohol (increased stomach bleeding risk)
+
+### Storage
+Store at room temperature (20-25°C or 68-77°F) away from moisture and light.
+
+---
+
+## IBUPROFEN
+
+### General Information
+Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used to treat pain, fever, and inflammation. It works by reducing hormones that cause inflammation and pain in the body.
+
+### Dosage
+- Adults: 200-400 mg every 4-6 hours as needed (maximum 3200 mg/day for prescription strength)
+- Children: Dosing based on weight (typically 5-10 mg/kg every 6-8 hours)
+
+### Side Effects
+Common side effects:
+- Upset stomach
+- Nausea
+- Dizziness
+- Headache
+- Heartburn
+
+Serious side effects:
+- Cardiovascular events (heart attack, stroke)
+- Gastrointestinal bleeding
+- Kidney problems
+- Allergic reactions
+
+### Drug Interactions
+- Aspirin (reduced cardioprotective effect)
+- Blood thinners (increased bleeding risk)
+- ACE inhibitors (reduced effectiveness, increased kidney risk)
+- Lithium (increased lithium levels)
+- Diuretics (reduced effectiveness)
+
+### Storage
+Store at room temperature (20-25°C) in a tightly closed container.
+
+---
+
+## INSULIN
+
+### General Information
+Insulin is a hormone used to control blood sugar levels in people with diabetes. There are several types including rapid-acting, short-acting, intermediate-acting, and long-acting insulin.
+
+### Types and Onset
+- Rapid-acting (lispro, aspart): Onset 15 minutes, peak 1 hour
+- Short-acting (regular): Onset 30 minutes, peak 2-3 hours
+- Intermediate-acting (NPH): Onset 2-4 hours, peak 4-12 hours
+- Long-acting (glargine, detemir): Onset 2-4 hours, no pronounced peak
+
+### Dosage
+Dosing is highly individualized based on blood glucose levels, diet, and activity level. Must be prescribed and adjusted by healthcare provider.
+
+### Side Effects
+- Hypoglycemia (low blood sugar) - most common
+- Weight gain
+- Injection site reactions
+- Lipodystrophy (changes in fat tissue at injection sites)
+
+### Storage
+- Unopened insulin: Store in refrigerator (2-8°C or 36-46°F)
+- Opened insulin: Can be kept at room temperature (below 30°C) for 28 days
+- Never freeze insulin
+- Protect from direct sunlight and heat
+- Discard if exposed to extreme temperatures or appears cloudy (for clear insulins)
+
+### Administration
+- Rotate injection sites to prevent lipodystrophy
+- Inject into subcutaneous tissue (abdomen, thighs, arms, buttocks)
+- Do not inject into areas with scarring or lipodystrophy
+
+---
+
+## WARFARIN
+
+### General Information
+Warfarin is an anticoagulant (blood thinner) used to prevent blood clots. It works by inhibiting vitamin K-dependent clotting factors.
+
+### Dosage
+Highly individualized based on INR (International Normalized Ratio) monitoring. Typical range: 2-10 mg daily. Requires regular blood tests to adjust dosing.
+
+### Side Effects
+- Bleeding (most common and serious)
+- Bruising
+- Nausea
+- Hair loss
+- Purple toe syndrome (rare)
+
+### Drug Interactions
+Warfarin has extensive drug interactions:
+
+Increases bleeding risk with:
+- Aspirin and NSAIDs
+- Antibiotics (many types)
+- Antifungals
+- Amiodarone
+- SSRIs
+
+Decreases warfarin effect:
+- Vitamin K-rich foods (spinach, kale, broccoli)
+- St. John's Wort
+- Carbamazepine
+- Rifampin
+
+### Monitoring
+- Regular INR monitoring required
+- Target INR typically 2-3 for most indications
+- Report any unusual bleeding immediately
+
+### Dietary Considerations
+- Maintain consistent vitamin K intake
+- Avoid excessive alcohol
+- Be cautious with cranberry juice and grapefruit juice
+
+### Storage
+Store at room temperature (20-25°C) protected from light and moisture.
+
+---
+
+## METFORMIN
+
+### General Information
+Metformin is the first-line medication for type 2 diabetes. It works by decreasing glucose production in the liver and improving insulin sensitivity.
+
+### Dosage
+- Starting dose: 500 mg twice daily or 850 mg once daily with meals
+- Maximum dose: 2550 mg/day in divided doses
+- Extended-release: 500-2000 mg once daily with evening meal
+
+### Side Effects
+Common:
+- Diarrhea
+- Nausea
+- Upset stomach
+- Metallic taste
+
+Rare but serious:
+- Lactic acidosis (medical emergency)
+- Vitamin B12 deficiency with long-term use
+
+### Drug Interactions
+- Contrast dye (increased lactic acidosis risk - hold before procedures)
+- Alcohol (increased lactic acidosis risk)
+- Cimetidine (increased metformin levels)
+
+### Contraindications
+- Severe kidney disease (eGFR <30 mL/min)
+- Liver disease
+- Excessive alcohol use
+- Heart failure requiring medication
+- Acidosis
+
+### Storage
+Store at room temperature (20-25°C) in original container.
+
+---
+
+## LISINOPRIL
+
+### General Information
+Lisinopril is an ACE inhibitor used to treat high blood pressure and heart failure. It works by relaxing blood vessels to lower blood pressure.
+
+### Dosage
+- Hypertension: Initial 10 mg once daily, usual range 20-40 mg/day
+- Heart failure: Initial 5 mg once daily, titrated up to 40 mg/day
+- Can be taken with or without food
+
+### Side Effects
+Common:
+- Dry cough (persistent)
+- Dizziness
+- Headache
+- Fatigue
+
+Serious:
+- Angioedema (swelling of face, lips, tongue, throat)
+- Hyperkalemia (high potassium)
+- Kidney problems
+- Hypotension (low blood pressure)
+
+### Drug Interactions
+- NSAIDs (reduced effectiveness, increased kidney risk)
+- Potassium supplements (increased potassium levels)
+- Diuretics (increased hypotension risk)
+- Lithium (increased lithium levels)
+
+### Contraindications
+- Pregnancy (causes fetal harm)
+- History of angioedema
+- Bilateral renal artery stenosis
+
+### Monitoring
+- Blood pressure
+- Kidney function (creatinine)
+- Potassium levels
+
+### Storage
+Store at room temperature (20-25°C) protected from moisture and excessive heat.
+
+---
+
+## LEVOTHYROXINE
+
+### General Information
+Levothyroxine is a synthetic thyroid hormone used to treat hypothyroidism. It replaces the hormone normally produced by the thyroid gland.
+
+### Dosage
+- Highly individualized based on TSH levels
+- Typical range: 25-200 mcg once daily
+- Take on empty stomach 30-60 minutes before breakfast
+- Consistency in timing is important
+
+### Side Effects
+Usually occur when dose is too high:
+- Anxiety or nervousness
+- Insomnia
+- Tremors
+- Palpitations
+- Weight loss
+- Heat intolerance
+
+### Drug Interactions
+Decreased absorption with:
+- Calcium supplements
+- Iron supplements
+- Antacids
+- Soy products
+- Coffee (take 4 hours apart)
+
+Increased levothyroxine needs:
+- Estrogen therapy
+- Pregnancy
+- Certain seizure medications
+
+### Monitoring
+- TSH levels checked regularly (every 6-8 weeks when adjusting, then annually)
+- Dosage adjusted based on TSH results
+
+### Storage
+Store at room temperature (20-25°C) protected from light and moisture. Do not use if expired.
+
+---
+
+## ATORVASTATIN
+
+### General Information
+Atorvastatin is a statin medication used to lower cholesterol and reduce cardiovascular risk. It works by inhibiting HMG-CoA reductase, reducing cholesterol production in the liver.
+
+### Dosage
+- Initial: 10-20 mg once daily
+- Range: 10-80 mg once daily
+- Can be taken any time of day, with or without food
+- Best if taken at same time each day
+
+### Side Effects
+Common:
+- Muscle aches (myalgia)
+- Headache
+- Nausea
+- Diarrhea
+
+Serious:
+- Rhabdomyolysis (severe muscle breakdown) - rare
+- Liver damage - rare
+- Diabetes (slightly increased risk)
+
+### Drug Interactions
+- Grapefruit juice (increases atorvastatin levels - avoid large amounts)
+- Gemfibrozil (increased muscle toxicity risk)
+- Certain antibiotics and antifungals
+- Cyclosporine
+
+### Monitoring
+- Liver function tests at baseline and as needed
+- Lipid panel to assess effectiveness
+- Report muscle pain or weakness immediately
+
+### Lifestyle
+- Continue healthy diet and exercise
+- Avoid excessive alcohol
+
+### Storage
+Store at room temperature (20-25°C) in original container.
+
+---
+
+## OMEPRAZOLE
+
+### General Information
+Omeprazole is a proton pump inhibitor (PPI) used to treat acid reflux, GERD, and ulcers. It works by reducing stomach acid production.
+
+### Dosage
+- GERD: 20 mg once daily for 4-8 weeks
+- Ulcer healing: 20-40 mg once daily
+- Take before meals (30-60 minutes before eating)
+- Do not crush or chew delayed-release capsules
+
+### Side Effects
+Common:
+- Headache
+- Nausea
+- Diarrhea or constipation
+- Abdominal pain
+
+Long-term use concerns:
+- Vitamin B12 deficiency
+- Magnesium deficiency
+- Increased bone fracture risk
+- Increased infection risk (C. difficile)
+
+### Drug Interactions
+- Clopidogrel (reduced effectiveness - avoid combination)
+- Warfarin (may increase bleeding risk)
+- Methotrexate (increased toxicity)
+- Reduces absorption of: iron, calcium, vitamin B12
+
+### Usage Guidelines
+- Use lowest effective dose for shortest duration
+- Not for immediate heartburn relief (takes 1-4 days to work)
+- May take up to 4 weeks for full effect
+
+### Storage
+Store at room temperature (20-25°C) in tightly closed container, protected from moisture.
