@@ -73,7 +73,7 @@ class PharmacyRAG:
             collection_name="pharmacy_knowledge"
         )
     
-    def setup_qa_chain(self, model_name: str = "gpt-3.5-turbo", temperature: float = 0) -> None:
+    def setup_qa_chain(self, model_name: str = "gpt-5.1", temperature: float = 0) -> None:
         """
         Set up the QA chain for question answering.
         
@@ -141,7 +141,7 @@ Helpful Answer:"""
             "source_documents": result["source_documents"]
         }
     
-    def initialize(self, model_name: str = "gpt-3.5-turbo") -> None:
+    def initialize(self, model_name: str = "gpt-5.1") -> None:
         """
         Complete initialization of the RAG system.
         
@@ -159,7 +159,7 @@ Helpful Answer:"""
 
 
 def create_rag_system(openai_api_key: str, data_path: str = "data/pharmacy_info.txt", 
-                      model_name: str = "gpt-3.5-turbo") -> PharmacyRAG:
+                      model_name: str = "gpt-5.1") -> PharmacyRAG:
     """
     Convenience function to create and initialize a Pharmacy RAG system.
     
