@@ -87,6 +87,13 @@ def download_model(model_url: str, model_path: str) -> str:
         response.raise_for_status()
         
         total_size = int(response.headers.get('content-length', 0))
+    except requests.exceptions.RequestException as e:
+        st.error(f"Network error downloading model: {e}")
+        st.info("Please check your internet connection and MODEL_URL")
+        raise
+    except ValueError as e:
+        st.error(f"Invalid content-length header: {e}")
+        total_size = 0
         
         progress_bar = st.progress(0)
         downloaded = 0
@@ -110,7 +117,7 @@ def download_model(model_url: str, model_path: str) -> str:
 
 
 @st.cache_resource
-def load_llm(model_path: str, n_ctx: int = 2048, n_threads: int = 4):
+def load_llm(model_path: str, n_ctx: int = 2048, n_threads: int = 4, verbose: bool = False):
     """
     Load the GGUF model with llama-cpp-python. Cached for performance.
     
@@ -118,6 +125,7 @@ def load_llm(model_path: str, n_ctx: int = 2048, n_threads: int = 4):
         model_path: Path to the GGUF model file
         n_ctx: Context window size
         n_threads: Number of CPU threads to use
+        verbose: Enable verbose logging for debugging
         
     Returns:
         Llama model instance
@@ -130,7 +138,7 @@ def load_llm(model_path: str, n_ctx: int = 2048, n_threads: int = 4):
             n_ctx=n_ctx,
             n_threads=n_threads,
             n_gpu_layers=0,  # CPU only for Streamlit Cloud
-            verbose=False
+            verbose=verbose
         )
         
         st.success("✓ LLM loaded successfully")
@@ -231,7 +239,7 @@ def retrieve_context(query: str, embedder, faiss_index, drug_texts: List[str],
     
     results = []
     for idx, score in zip(indices[0], scores[0]):
-        if idx < len(drug_texts):
+        if 0 <= idx < len(drug_texts):
             results.append((drug_names[idx], drug_texts[idx], float(score)))
     
     return results
@@ -355,7 +363,8 @@ def main():
         
         # Step 2: Load LLM
         with st.spinner("Initializing LLM..."):
-            llm = load_llm(model_file, n_ctx=n_ctx, n_threads=n_threads)
+            verbose_mode = os.getenv("LLM_VERBOSE", "false").lower() == "true"
+            llm = load_llm(model_file, n_ctx=n_ctx, n_threads=n_threads, verbose=verbose_mode)
         
         # Step 3: Load embeddings
         with st.spinner("Loading embeddings..."):

@@ -52,6 +52,7 @@ def test_drugs_csv():
 def test_embeddings():
     """Test sentence-transformers embedding model."""
     print("\nTesting sentence-transformers...")
+    print("  Note: First run will download the model (~90MB)")
     try:
         from sentence_transformers import SentenceTransformer
         
