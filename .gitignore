@@ -47,8 +47,19 @@ chroma_db/
 *.pkl
 *.pickle
 
+# GGUF models (large files)
+models/
+*.gguf
+*.bin
+
 # Logs
 *.log
+
+# Backup files
+*_old.py
+*_old.txt
+*_backup.*
+*.bak
 
 # OS
 .DS_Store
