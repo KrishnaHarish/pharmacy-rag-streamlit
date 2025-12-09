@@ -86,14 +86,11 @@ def download_model(model_url: str, model_path: str) -> str:
         response = requests.get(model_url, stream=True)
         response.raise_for_status()
         
-        total_size = int(response.headers.get('content-length', 0))
-    except requests.exceptions.RequestException as e:
-        st.error(f"Network error downloading model: {e}")
-        st.info("Please check your internet connection and MODEL_URL")
-        raise
-    except ValueError as e:
-        st.error(f"Invalid content-length header: {e}")
-        total_size = 0
+        try:
+            total_size = int(response.headers.get('content-length', 0))
+        except (ValueError, TypeError):
+            st.warning("Could not determine file size, progress bar may be inaccurate")
+            total_size = 0
         
         progress_bar = st.progress(0)
         downloaded = 0
@@ -109,6 +106,11 @@ def download_model(model_url: str, model_path: str) -> str:
         progress_bar.empty()
         st.success(f"✓ Model downloaded to {model_path}")
         return str(model_file)
+        
+    except requests.exceptions.RequestException as e:
+        st.error(f"Network error downloading model: {e}")
+        st.info("Please check your internet connection and MODEL_URL")
+        raise
         
     except Exception as e:
         st.error(f"Error downloading model: {e}")
@@ -241,6 +243,10 @@ def retrieve_context(query: str, embedder, faiss_index, drug_texts: List[str],
     for idx, score in zip(indices[0], scores[0]):
         if 0 <= idx < len(drug_texts):
             results.append((drug_names[idx], drug_texts[idx], float(score)))
+        else:
+            # Log warning if FAISS returns invalid index (shouldn't happen with properly built index)
+            import warnings
+            warnings.warn(f"FAISS returned invalid index {idx}, skipping (index size: {len(drug_texts)})")
     
     return results
 
