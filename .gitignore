@@ -47,6 +47,11 @@ chroma_db/
 *.pkl
 *.pickle
 
+# GGUF models (large files)
+models/
+*.gguf
+*.bin
+
 # Logs
 *.log
 
